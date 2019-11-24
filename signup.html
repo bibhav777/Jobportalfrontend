@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Signup</title>
+	<link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/signup.css">
+</head>
+<body>
+	  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #af2c23;">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav menu_nav justify-content-center">
+                                <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
+                                <li class="nav-item"><a class="nav-link" href="matches.html">About</a></li> 
+                                <li class="nav-item"><a class="nav-link" href="login.html">Login</a>
+                                    <li class="nav-item"><a class="nav-link" href="signup.html">Signup</a></li>
+                                   
+                            </div> 
+                        </div>
+                    </nav>
+                        <div class="container">
+      <div class="row main">
+        <div class="main-login main-center">
+        <h5>Sign up once and watch any of our free demos.</h5>
+          <form method="post" id="regisform" enctype="multipart/form-data">
+            
+            <div class="form-group">
+              <label for="name" class="cols-sm-2 control-label">Username</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Name"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="cols-sm-2 control-label">Your Email</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="cols-sm-2 control-label">Password</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                  <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+                </div>
+              </div>
+            </div>
+
+           
+              <div class="form-group ">
+              <button type="submit" id="submit" class="btn btn-primary btn-lg btn-blocklogin-button">Register</button> 
+            </div>
+            <div >
+  <p style="font-size: 16px; font-weight: bold" id="successmessage"></p>
+</div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+</body>
+</html>
+<script type="text/javascript" src="resources/jquery.js"></script>
+<script type="text/javascript" src="resources/bootstrap/custom.js" ></script>
