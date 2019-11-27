@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Signup</title>
+	<title>Addjob</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
        <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
@@ -46,7 +46,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Sports</a>
+                <a class="navbar-brand" href="index.html">JobDashboard</a>
             </div>
 
         </nav>
@@ -59,10 +59,10 @@
                         <a href="adminDashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="addplayer.html" class="active-menu"><i class="fa fa-desktop"></i> Add players</a>
+                        <a href="addplayer.html" class="active-menu"><i class="fa fa-desktop"></i>Post job</a>
                     </li>
                     <li>
-                        <a href="players.html" ><i class="fa fa-bar-chart-o"></i> View Players</a>
+                        <a href="players.html" ><i class="fa fa-bar-chart-o"></i> View jobs</a>
                     </li>
                     <li>
                         <a href="addmatches.html"><i class="fa fa-qrcode"></i>Add matches</a>
@@ -89,8 +89,9 @@
             <i class="fa fa-arrow-left" onclick="Back()"></i>
         </div>
         <p class="h2 text-center">Add details</p>
-        <form method="post" enctype="multipart/form-data" id="addplayer">
+        <form method="post" enctype="multipart/form-data" id="addjob">
             <div class="preview text-center">
+                <label>Company logo</label>
                 <img class="preview-img" src="http://simpleicon.com/wp-content/uploads/account.png" alt="Preview Image" width="200" height="200"/>
                 <div class="browse-button">
                     <i class="fa fa-pencil-alt"></i>
@@ -98,45 +99,43 @@
                 </div>
                 <span class="Error"></span>
             </div>
-            <div class="form-group">
-                <label>Full Name:</label>
-                <input class="form-control" type="text" name="fullname" required placeholder="Enter Your Full Name" id="fullname" />
+             <div class="form-group">
+                <label>Company name</label>
+                <input class="form-control" type="text" name="cname" required placeholder="Company name" id="cname" />
                 <span class="Error"></span>
             </div>
             <div class="form-group">
-                <label>DOB:</label>
-                <input class="form-control" type="date" name="dob" id="dob" required placeholder="Enter Your Date of Birth"/>
+                <label>Job title</label>
+                <input class="form-control" type="text" name="jobtitle" required placeholder="Job title" id="jobtitle" />
                 <span class="Error"></span>
             </div>
+         <div class="form-group">
+                <label>Job description:</label>
+              <textarea class="form-control" name="jobdescription" id="jobdescription">Job description......</textarea>
+            </div>
             <div class="form-group">
-                <label>Address</label>
-                <input class="form-control" type="text" name="address" id="address" required placeholder="Enter your Address"/>
-                <span class="Error"></span>
+                <label>Experiences</label>
+              <textarea class="form-control" name="experience" id="experience">Experience......</textarea>
             </div>
            <div class="form-group">
-                <label>Sports Involved</label>
-                <input class="form-control" type="text" name="sports" id="sports" />
-                <span class="Error"></span>
-            </div>
-          
-            <div class="form-group">
-                <label>Height:</label>
-                <input class="form-control" type="text" name="height" id="height"  placeholder="Height in cm" />
+                <label>Education</label>
+                <input class="form-control" type="text" name="education" id="education" required placeholder="Education" />
                 <span class="Error"></span>
             </div>
             <div class="form-group">
-                <label>Registered since:</label>
-                <input class="form-control" type="date" name="regisdate" id="regisdate"/>
+                <label>Job Location</label>
+                <input class="form-control" type="text" name="location" id="location" required placeholder="Location" />
                 <span class="Error"></span>
-            </div> 
-                <div class="form-group">
-                <label>Position:</label>
-                <input class="form-control" type="text" name="position" id="position"/>
-                <span class="Error"></span>
-            </div> 
+            </div>
+
 
             <div class="form-group">
-                <input class="btn btn-primary btn-block" type="submit" id="submit" value="Register"/>
+                <label>Applying procedure</label>
+                <input class="form-control" type="text" name="procedure" id="procedure" required placeholder="" />
+                <span class="Error"></span>
+            </div>
+          <div class="form-group">
+                <input class="btn btn-primary btn-block" type="submit" id="submit" value="Post"/>
             </div>
         </form>
 
@@ -168,7 +167,7 @@
 </body>
 </html>
 <script type="text/javascript" src="resources/jquery.js"></script>
-<script type="text/javascript" src="resources/bootstrap/addplayer.js" ></script>
+<script type="text/javascript" src="resources/bootstrap/addjob.js" ></script>
 <script type="text/javascript">
   function Back()
 {
