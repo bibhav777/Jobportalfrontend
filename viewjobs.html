@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>players</title>
+    <title>ViewJobs</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
@@ -14,7 +14,7 @@
  
  </head>
 <body style="background-color: white;">
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #af2c23;">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(95, 89, 89, 0.075);">
                     <div class="container-fluid">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         
@@ -46,7 +46,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="adminDashboard.html"> Sports</a>
+                <a class="navbar-brand" href="adminDashboard.html"> JobDashboard</a>
             </div>
 
         </nav>
@@ -59,10 +59,10 @@
                         <a href="adminDashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="addplayer.html" ><i class="fa fa-desktop"></i> Add players</a>
+                        <a href="addjob.html" ><i class="fa fa-desktop"></i> Add jobs</a>
                     </li>
                     <li>
-                        <a href="players.html" class="active-menu" ><i class="fa fa-bar-chart-o"></i> View Players</a>
+                        <a href="viewjobs.html" class="active-menu" ><i class="fa fa-bar-chart-o"></i> View jobs</a>
                     </li>
                     <li>
                         <a href="addmatches.html"><i class="fa fa-qrcode"></i>Add matches</a>
@@ -89,70 +89,62 @@
    </div>
  </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+ <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Edit Matches</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-         <form method="PUT" id="playeredit" enctype="multipart/form-data">
-            <div class="form-group">
-                <label>Full Name:</label>
-                <input class="form-control" type="text" name="fullname" required placeholder="Enter Your Full Name" id="fullname" />
+         <form method="PUT" id="jobedit" enctype="multipart/form-data">
+                 <label>Company logo</label>
+                <img class="preview-img" src="http://simpleicon.com/wp-content/uploads/account.png" alt="Preview Image" width="200" height="200"/>
+                <div class="browse-button">
+                    <i class="fa fa-pencil-alt"></i>
+                    <input class="browse-input" type="file" name="image" id="image"/>
+                </div>
+                <span class="Error"></span>
+            </div>
+             <div class="form-group">
+                <label>Company name</label>
+                <input class="form-control" type="text" name="cname" required placeholder="Company name" id="cname" />
                 <span class="Error"></span>
             </div>
             <div class="form-group">
-                <label>DOB:</label>
-                <input class="form-control" type="date" name="dob" id="dob" required placeholder="Enter Your Date of Birth"/>
+                <label>Job title</label>
+                <input class="form-control" type="text" name="jobtitle" required placeholder="Job title" id="jobtitle" />
                 <span class="Error"></span>
             </div>
+         <div class="form-group">
+                <label>Job description:</label>
+              <textarea class="form-control" name="jobdescription" id="jobdescription">Job description......</textarea>
+            </div>
             <div class="form-group">
-                <label>Address</label>
-                <input class="form-control" type="text" name="address" id="address" required placeholder="Enter your Address"/>
-                <span class="Error"></span>
+                <label>Experiences</label>
+              <textarea class="form-control" name="experience" id="experience">Experience......</textarea>
             </div>
            <div class="form-group">
-                <label>Sports Involved</label>
-                <input class="form-control" type="text" name="sports" id="sports" />
-                <span class="Error"></span>
-            </div>
-          
-            <div class="form-group">
-                <label>Height:</label>
-                <input class="form-control" type="text" name="height" id="height"  placeholder="Height in cm" />
+                <label>Education</label>
+                <input class="form-control" type="text" name="education" id="education" required placeholder="Education" />
                 <span class="Error"></span>
             </div>
             <div class="form-group">
-                <label>Registered since:</label>
-                <input class="form-control" type="date" name="regisdate" id="regisdate"/>
+                <label>Job Location</label>
+                <input class="form-control" type="text" name="location" id="location" required placeholder="Location" />
                 <span class="Error"></span>
-            </div> 
-                <div class="form-group">
-                <label>Position:</label>
-                <input class="form-control" type="text" name="position" id="position"/>
-                <span class="Error"></span>
-            </div> 
+            </div>
+
 
             <div class="form-group">
-                <input class="btn btn-primary" type="submit" id="submit" value="Update"/>
+                <label>Applying procedure</label>
+                <input class="form-control" type="text" name="procedure" id="procedure" required placeholder="" />
+                <span class="Error"></span>
+            </div>
+          <div class="form-group">
+                <input class="btn btn-primary btn-block" type="submit" id="submit" value="Post"/>
             </div>
 
              
@@ -180,4 +172,4 @@
 
 <script type="text/javascript" src="resources/jquery.js"></script>
 <script type="text/javascript" src="resources/bootstrap.min.js"></script>
-<script type="text/javascript" src="resources/bootstrap/detailplayers.js" ></script>
+<script type="text/javascript" src="resources/bootstrap/detailjob.js" ></script>

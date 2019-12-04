@@ -1,6 +1,6 @@
 $(document).ready(function(){
 var uid;
-$('#card').on('click','#edituser',function(){
+$('#card').on('click','#editjob',function(){
  
  
 uid= $(this)[0].attributes.uid.nodeValue;
@@ -8,20 +8,20 @@ console.log(uid)
 //console.log(uid);
 
 $.ajax({
-  url: 'http://localhost:3001/players/'+uid,
+  url: 'http://localhost:3001/jobs/'+uid,
   method: 'get',
   dataType: 'json',
 success: function(result,status){
   //console.log(result)
-$('#fullname').val(result.fullname);
-$('#dob').val(result.dob)
-$('#address').val(result.address)
-$('#sports').val(result.sportsinvolved)
-$('#height').val(result.height)
-$('#regisdate').val(result.registersince)
-$('#position').val(result.position)
+$('#cname').val(result.cname);
+$('#jobtitle').val(result.jobtitle)
+$('#jobdescription').val(result.jobdescription)
+$('#experience').val(result.experience)
+$('#education').val(result.education)
+$('#location').val(result.location)
+$('#procedure').val(result.procedure)
 
-  // window.location.href="editmatches.html"
+
 
 
 },
@@ -31,33 +31,33 @@ error:function(jqXHR,status){
 })
 })
 
-$('#playeredit').submit(function(e){
+$('#jobedit').submit(function(e){
 e.preventDefault(); 
 
-var updatePlayer={
-            fullname: $('#fullname').val(),
-            dob: $('#dob').val(),
-            address: $('#address').val(),
-            sportsinvolved: $('#sports').val(),
-            height: $('#height').val(),
-            registersince: $('#regisdate').val(),
-            position:$('#position').val()
+var updateJob={
+            cname: $('#cname').val(),
+            jobtitle: $('#jobtitle').val(),
+            jobdescription: $('#jobdescription').val(),
+            experience: $('#experience').val(),
+            education: $('#education').val(),
+            location: $('#location').val(),
+            procedure:$('#procedure').val()
 
 }
 
 
 $.ajax({
 
-  url: 'http://localhost:3001/updateplayers/' + uid,
+  url: 'http://localhost:3001/updatejobs/' + uid,
   method: "PUT",
   contentType:'application/json',
   dataType: 'json',
-  data:JSON.stringify(updatePlayer),
+  data:JSON.stringify(updateJob),
 success :function(result,status){
   console.log(result)
     
     alert("Updated sucessfully"); 
-    window.location.href="players.html" 
+    window.location.href="viewjobs.html" 
   },
 
   error:function(jqXHR,status) {
@@ -79,12 +79,12 @@ var confirmation= confirm("Are you sure ?")
 if(confirmation == true){
  $.ajax({
 
-  url: 'http://localhost:3001/deleteplayers/'+uid,
+  url: 'http://localhost:3001/deletejobs/'+uid,
   method: 'delete',
   dataType: 'json',
 success :function(result,status){
     
-  window.location.href="players.html";
+  window.location.href="viewjobs.html";
       //$('#message').html(result.message);    
   },
 
@@ -108,7 +108,7 @@ success :function(result,status){
 
 $.ajax({
 
-  url: 'http://localhost:3001/viewplayers',
+  url: 'http://localhost:3001/viewjobs',
   method: 'GET',
   contentType:'application/json',
   dataType: 'json',
@@ -136,21 +136,22 @@ $.ajax({
                             <!--Heading-->\
                             <div class="item-box-blog-heading">\
                               <a href="#" tabindex="0">\
-                                <h5>Player Details</h5>\
+                                <h3>Job Details</h3>\
                               </a>\
                             </div>\
                             <!--Data-->\
                             <!--Text-->\
+                            <br>\
                             <div class="item-box-blog-text">\
-                               Fullname:'+result[key].fullname+' <br>\
-                               Date of Birth:'+result[key].dob+'<br>\
-                               Address:'+result[key].address+'<br>\
-    Sports:'+result[key].sportsinvolved+' <br>\
-    Height:'+result[key].height+'<br>\
-    Joined since:'+result[key].registersince+' <br>\
-    Position:'+result[key].position+'<br>\
+                               CompanyName: '+result[key].cname+' <br>\
+                               JobTitle: '+result[key].jobtitle+'<br>\
+                               JobDescription: '+result[key].jobdescription+'<br>\
+    <b>Experiences</b>: '+result[key].experience+' <br>\
+    Eduation: '+result[key].education+'<br>\
+    Location: '+result[key].location+' <br>\
+    ApplyingProcedure: '+result[key].procedure+'<br>\
                             </div>\
-                            <a class="btn btn-primary" uid="'+result[key].id+'"  id="edituser" class="fa fa-edit" data-toggle="modal" data-target="#exampleModalCenter">Edit</a>\
+                            <a class="btn btn-primary" uid="'+result[key].id+'"  id="editjob" class="fa fa-edit" data-toggle="modal" data-target="#exampleModalCenter">Edit</a>\
                             <button type="button" class="btn btn-danger" uid="'+result[key].id+'" id="delete" >Delete</button>\
                         </div>\
                       </div>\
